@@ -197,6 +197,26 @@ body {
   cursor: pointer;
 }
 
+/*=========== SEÇÃO PUBLICIDADE ===========*/
+.buttons-publicidade{
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-publicidade button{
+  background-color: #00000000;
+  border: 0.5px solid #fff8;
+  border-radius: 3px;
+  padding: 2px 5px;
+  color: #fff7;
+  font-family: 'Bison-Bold', sans-serif;
+}
+
+.buttons-publicidade .ativo{
+  border: 0.5px solid #ffffff;
+  color: #ffffff;
+}
+
 /*=========== SEÇÃO CONTATO ===========*/
 .contato {
   display: flex;

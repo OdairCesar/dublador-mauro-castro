@@ -82,3 +82,46 @@ buttonPrev.addEventListener('click', function () {
   }
   console.log(contVideo)
 })
+
+/*================== Mudando o audio do player da SoundCloud ====================*/
+/* Pegando elementos da DOM */
+const audioPlayer = document.querySelector('.player-publicidade')
+const buttonPrevPubli = document.getElementById('button-prev-publi')
+const buttonNextPubli = document.getElementById('button-next-publi')
+
+/* Criando um limitador de ações */
+let contAudio = 0
+
+/* Criando função para mudar cor do Button conforme o limitador mude */
+colocarAtivoButton = () =>{
+  if(contAudio > 0){
+    buttonPrevPubli.classList.add('ativo')
+  }else if(contAudio <= 0){
+    buttonPrevPubli.classList.remove('ativo')
+  }
+
+  if(contAudio < 6){
+    buttonNextPubli.classList.add('ativo')
+  }else if(contAudio >= 6){
+    buttonNextPubli.classList.remove('ativo')
+  }
+}
+colocarAtivoButton()
+
+buttonNextPubli.addEventListener('click', () => {
+  if(contAudio <= 5){
+    contAudio++
+    audioPlayer.removeAttribute('src')
+    audioPlayer.setAttribute('src', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+publicidade[contAudio]+'&color=%23829eb8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')  
+    colocarAtivoButton()
+  }
+})
+
+buttonPrevPubli.addEventListener('click', () => {
+  if(contAudio > 0){
+    contAudio--
+    audioPlayer.removeAttribute('src')
+    audioPlayer.setAttribute('src', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+publicidade[contAudio]+'&color=%23829eb8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+    colocarAtivoButton()
+  }
+})
