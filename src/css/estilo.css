@@ -1,26 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
-@font-face{
-  font-family: 'Bison-Bold';
-  src: url('../fonts/bison-bold.ttf'); 
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Bison-Bold";
+  src: url("../fonts/bison-bold.ttf");
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: .3s;
+  transition: 0.3s;
+}
+html {
+  scroll-behavior: smooth;
 }
 
-html {
-  background-color: #000;
-  scroll-behavior: smooth;
-  font-family: 'Bison-Bold', sans-serif;
+body {
+  background: url(../img/bg-body.jpg) center top repeat;
+  font-family: "Bison-Bold", sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
 
 ::-webkit-scrollbar {
-  width: .7rem;
+  width: 0.7rem;
   background: #000000;
 }
 
@@ -28,44 +30,48 @@ html {
   background: #414141;
 }
 
-.container{
-  max-width: 1200px;
+.container {
+  max-width: 1100px;
   width: auto;
+  max-height: 720px;
+  height: auto;
   margin: 0 auto;
-  padding: 5em 0;
+  padding: 3em 0;
 }
 
 /*=========== SEÇÃO CABEÇALHO ===========*/
-.cabecalho{
-  max-width: 1450px;
+.cabecalho {
+  max-width: 1053px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.imagem-cabecalho{
+.imagem-cabecalho {
   position: absolute;
-  width: 1450px;
-  top: 50px;
+  max-width: 1053px;
+  width: 100%;
+  top: 20px;
   z-index: -9;
 }
 
-.menu{
-  margin-left: 135px;
+.menu {
+  margin-left: 80px;
   list-style: none;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
-.item-menu{
+.item-menu {
   display: flex;
 }
 
-.item-menu a{
+.item-menu a {
   text-decoration: none;
   color: #fff;
 }
 
-.detalhe-item-menu{
+.detalhe-item-menu {
   width: 0.1em;
   height: 0;
   margin: 0.3em 0.1em 0.2em 0;
@@ -73,44 +79,46 @@ html {
   transition: 1s all;
 }
 
-.item-menu a:hover{
+.item-menu a:hover {
   color: #ffffffcc;
 }
 
-.item-menu:hover .detalhe-item-menu{
+.item-menu:hover .detalhe-item-menu {
   height: auto;
   background-color: #ffffff;
 }
 
 /*=========== SEÇÃO DUBLAGENS ===========*/
-.dublagens{
+.dublagens {
+  max-height: 5000px;
   padding: 5em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.list-dublagens{
+.list-dublagens {
+  max-width: 800px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.card-dublagem{
-  width: 230px;
-  height: 342px;
+.card-dublagem {
+  width: 140px;
+  height: 208px;
   margin-bottom: 10px;
 }
 
-.card-dublagem img{
-  width: 230px;
+.card-dublagem img {
+  width: 140px;
   position: absolute;
   z-index: -9999;
   transform: scale(0.9);
-  transition: all ease .3s;
+  transition: all ease 0.3s;
 }
 
-.info-card-dublagem{
+.info-card-dublagem {
   width: 100%;
   height: 100%;
   padding: 50px 20px;
@@ -120,28 +128,28 @@ html {
   justify-content: center;
 
   background-color: #000a;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   text-transform: capitalize;
   font-size: 1.4em;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
   opacity: 0;
 }
 
-.info-card-dublagem h4{
+.info-card-dublagem h4 {
   font-size: 1.6em;
 }
 
-.card-dublagem:hover .info-card-dublagem{
+.card-dublagem:hover .info-card-dublagem {
   opacity: 1;
 }
 
-.card-dublagem:hover img{
+.card-dublagem:hover img {
   transform: scale(1);
 }
 
-.button-dublagens{
+.button-dublagens {
   font-size: 1em;
-  font-family: 'Bison-Bold', sans-serif;
+  font-family: "Bison-Bold", sans-serif;
   color: #fff7;
 
   padding: 5px 20px;
@@ -151,15 +159,16 @@ html {
   cursor: pointer;
 }
 
-.button-dublagens:hover{
+.button-dublagens:hover {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
 
 /*=========== SEÇÃO AtUAÇÕES ===========*/
-.atuacoes{
-  max-width: 1400px;
+.atuacoes {
+  max-width: 1109px;
   width: auto;
+  height: 100vh;
   padding: 3em 0;
 
   display: flex;
@@ -168,71 +177,139 @@ html {
   justify-content: center;
 }
 
-#videos-ator{
+#videos-ator {
   width: 100%;
-  height: 100%;
+  max-height: 698px;
 }
-.video-atuacoes{
+.video-atuacoes {
   width: 100%;
   height: 100%;
 }
 
-.buttons-atuacoes{
+.buttons-atuacoes {
   display: flex;
 }
 
-.buttons-atuacoes i{
+.buttons-atuacoes i {
   font-size: 3em;
   font-weight: 1000;
   padding: 0 0.3em;
+  cursor: pointer;
 }
 
 /*=========== SEÇÃO CONTATO ===========*/
-.contato{
+.contato {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20em 0;
+  padding: 10em 0 20em 0;
 }
 
-.titulo-contato{
+.titulo-contato {
   margin-right: 60px;
 }
 
-.titulo-contato p{
+.titulo-contato p {
   font-size: 10em;
   font-weight: 800;
   margin: -55px 0;
 }
 
-.info-contato{
+.info-contato {
   display: flex;
   align-items: center;
   color: #d9d9d9a2;
 }
 
-.info-contato span{
+.info-contato span {
   font-size: 5em;
   margin-right: 20px;
 }
 
-.telefone-contato{
+.telefone-contato {
   font-size: 8em;
   margin: 0 0 -10px 0;
 }
 
-.email-contato{
+.email-contato {
   font-size: 3em;
   margin: 0;
 }
 
 /*=========== SEÇÃO RODAPE ===========*/
-.rodape{
+.rodape {
   display: flex;
   justify-content: space-between;
   padding: 2em 0;
 }
-.rodape p{
+.rodape p {
   text-transform: capitalize;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
+}
+
+@media (max-width: 589px) {
+  body{
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    width: auto;
+    margin: 0 auto;
+    padding: 1em 0.5em;
+  }
+
+  /* CABEÇALHO */
+  .cabecalho {
+    height: 67vh;
+  }
+
+  .menu {
+    margin-left: 1em;
+    font-size: 2em;
+  }
+
+  /* DUBLAGENS */
+  .info-card-dublagem {
+    font-size: 1.2em;
+  }
+
+  .info-card-dublagem h4 {
+    font-size: 1.2em;
+  }  
+
+  /* ATUAÇÕES */
+  .atuacoes {
+    height: 60vh;
+    padding: 5em 0;
+  }
+
+  /* CONTATO*/
+  .contato {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12em 1em;
+  }
+
+  .info-contato{
+    padding: 5em 0;
+  }
+
+  .info-contato span {
+    font-size: 3em;
+    margin-right: 10px;
+  }
+
+  .telefone-contato {
+    font-size: 5em;
+    margin: 0;
+  }
+
+  .email-contato {
+    font-size: 2em;
+    margin: 0;
+  }
+  .rodape {
+    flex-direction: column;
+  }
 }

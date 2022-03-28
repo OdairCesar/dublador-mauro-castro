@@ -1,9 +1,9 @@
-/*======== Deixando CONTAINERS com TAMANHO DA TELA =======*/
-let cabecalho = document.querySelector('.cabecalho')
-cabecalho.style.height = window.innerHeight + 'px'
-
-let atuacoes = document.querySelector('.atuacoes')
-atuacoes.style.height = window.innerHeight + 'px'
+/*================== Trocando imagem de fundo para telas pequenas ====================*/
+if (window.innerWidth < 589) {
+  const imgCabecalho = document.querySelector('.imagem-cabecalho')
+  imgCabecalho.removeAttribute('src')
+  imgCabecalho.setAttribute('src', './src/img/logotipo-pq.png')
+}
 
 /*================== Adionando os cards no HTML ====================*/
 const listDublagens = document.getElementById('list-dublagens')
@@ -53,8 +53,9 @@ function criarVideoNovo(video) {//Função criar Video Novo
   return novoVideo
 }
 
+/*---------- Click do Button Next do Video ----------*/
 buttonNext.addEventListener('click', function () {
-  if (contVideo < 4) {//Como são 4 videos so podemos fazer até o video 04
+  if (contVideo < 4) {//Como são 4 videos so podemos fazer até o video 04 
     contVideo++
     //Deletando video atual
     document.getElementById('video-atuacoes').remove()
@@ -66,6 +67,7 @@ buttonNext.addEventListener('click', function () {
   }
 })
 
+/*---------- Click do Button Prev do Video ----------*/
 buttonPrev.addEventListener('click', function () {
   if (contVideo > 1) {//Como a numeração começa em 01 so podemos voltar até o video 01
     contVideo--
@@ -80,5 +82,3 @@ buttonPrev.addEventListener('click', function () {
   }
   console.log(contVideo)
 })
-
-
